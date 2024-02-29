@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wordle PPY</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <h1>Wordle PPY</h1>
+    <input type="text" id="guess-input" onkeydown="return/[a-zA-Z]/i.test(event.key)" maxlength="5">
+    <button id="Intentar-boton">Intentar</button>
+    <!-- <button id="reintentar">reintentar</button> -->
+    <div id='grid'>
+    </div>
+    <p id="intentos"></p>
+</body>
+
+</html>
