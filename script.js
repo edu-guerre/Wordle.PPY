@@ -1,6 +1,6 @@
 let intentos = 6;
 let opciones = ["NACER","SIETE","MARZO","ABRIL","ROBIN","MARIO","LUIGI","SUPER"]
-const palabra = opciones[Math.floor(Math.random() * opciones.length)];
+let palabra = "";
 
 let gameover = false;
 let errorletra = false;
@@ -24,7 +24,15 @@ button.addEventListener("click",()=>{
 
 
 function init() {
-    console.log('Esto se ejecuta solo cuando se carga la pagina web')
+   fetch('https://random-word-api.herokuapp.com/word?lang=es&length=5')
+   .then(response => response.json())
+   .then(response =>{
+    palabra = response[0].toUpperCase()
+    console.log(palabra)
+   })
+   .catch(err =>{
+    palabra = opciones[Math.floor(Math.random() * opciones.length)];
+   })
 }
 function intentar() {
     const INTENTO = leerIntento();
